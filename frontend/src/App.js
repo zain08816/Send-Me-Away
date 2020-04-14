@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 
 const App = () => {
 
-  const [link, setLink] = useState("https://www.w3docs.com/");
+  const [link, setLink] = useState("");
   const [route, setRoute] = useState(2);
 
   useEffect(() => {
@@ -15,8 +15,10 @@ const App = () => {
   function handleClick() {
     if (route == 0) {
       setLink("https://zainali.me/");
-    } else {
+    } else if (route == 1) {
       setLink("https://www.google.com/");
+    } else {
+      setLink("https://www.cloudflare.com/")
     }
   }
 
