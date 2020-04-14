@@ -1,30 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 const App = () => {
 
-  function handleClick() {
-    if (Math.random()) {
+  const [link, setLink] = useState("https://www.w3docs.com/");
+  const [route, setRoute] = useState(2);
 
+  useEffect(() => {
+    setRoute(Math.round(Math.random()));
+  });
+
+  function handleClick() {
+    if (route == 0) {
+      setLink("https://zainali.me/");
+    } else {
+      setLink("https://www.google.com/");
     }
   }
 
   return (
     <div>
-      <form onSubmit = { handleClick } action="https://www.w3docs.com/">
+      <form onSubmit = { handleClick } action= { link }>
         <Button
-          type = "submit"
           color="primary"
+          type="submit"
+          size="sm"
         >
-
           Send Me Away!
-      </Button>
-
+        </Button>{' '}
+        {route}
       </form>
-
     </div>
   );
 }
