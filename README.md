@@ -8,7 +8,7 @@ An application using the Cloudflare Workers API that will send randomly send use
 
 ### Main
 - [x] 1. Request the URLs from the API
-- [x] 2. Request a (random: see #3) variant
+- [x] 2. Request a random variant
 - [x] 3. Distribute requests between variants
 
 ### Deployment
